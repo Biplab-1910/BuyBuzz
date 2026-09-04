@@ -1,0 +1,175 @@
+.orders-page {
+  min-height: 100vh;
+  padding: 50px 7%;
+  background: #fafafa;
+  color: #111;
+}
+
+.orders-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.orders-header p {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.orders-header h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.orders-header a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.order-card {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.order-top div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.order-top span:first-child,
+.order-bottom span {
+  font-size: 11px;
+  color: #777;
+  letter-spacing: 1px;
+}
+
+.order-status {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #f1f1f1;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.order-items {
+  padding: 20px 0;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+}
+
+.order-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+.order-item div {
+  flex: 1;
+}
+
+.order-item h3 {
+  margin: 0 0 7px;
+  font-size: 16px;
+}
+
+.order-item p {
+  margin: 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.order-bottom {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.order-bottom div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.orders-empty {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 60px 30px;
+}
+
+.orders-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.orders-empty h2 {
+  margin-bottom: 10px;
+}
+
+.orders-empty p {
+  color: #777;
+}
+
+.orders-empty a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .orders-page {
+    padding: 30px 5%;
+  }
+
+  .orders-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .orders-header h1 {
+    font-size: 32px;
+  }
+
+  .order-bottom {
+    flex-direction: column;
+  }
+}

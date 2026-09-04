@@ -1,0 +1,173 @@
+.auth-page {
+  min-height: calc(100vh - 74px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f5f4f0;
+
+  padding: 50px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+
+  padding: 45px;
+
+  background: white;
+  border: 1px solid #e5e5e5;
+}
+
+.auth-header {
+  margin-bottom: 35px;
+}
+
+.auth-header p {
+  margin-bottom: 12px;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.auth-header h1 {
+  margin-bottom: 10px;
+
+  font-size: 40px;
+  letter-spacing: -1.5px;
+}
+
+.auth-header span {
+  font-size: 14px;
+  color: #777;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  height: 47px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d8d8d8;
+  outline: none;
+
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #111;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 5px 0 25px;
+
+  font-size: 12px;
+}
+
+.form-options label {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.form-options a {
+  color: #555;
+}
+
+.auth-button {
+  width: 100%;
+  height: 48px;
+
+  border: none;
+
+  background: #111;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  background: #333;
+}
+
+.auth-footer {
+  margin-top: 28px;
+
+  text-align: center;
+
+  font-size: 13px;
+  color: #777;
+}
+
+.auth-footer a {
+  color: #111;
+  font-weight: 600;
+}
+.account-selection {
+  display: flex;
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.account-option {
+  flex: 1;
+  min-height: 170px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+  padding: 22px 12px;
+  transition: 0.25s;
+}
+
+.account-option:hover {
+  border-color: #111;
+  transform: translateY(-3px);
+}
+
+.account-icon {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.account-option h2 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.account-option p {
+  font-size: 13px;
+  color: #777;
+  margin: 0;
+}
+
+.back-login {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 13px;
+}

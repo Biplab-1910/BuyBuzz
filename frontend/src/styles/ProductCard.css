@@ -1,0 +1,195 @@
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #dedbd2;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  transition: 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c9a227;
+
+  box-shadow:
+    0 15px 35px rgba(23, 32, 51, 0.12);
+}
+
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.product-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 190px;
+
+  background: #f7f6f2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  /*
+    পুরো product দেখা যাবে
+    image crop হবে না
+  */
+  object-fit: contain;
+
+  object-position: center;
+
+  padding: 8px;
+
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.04);
+}
+
+
+/* =========================
+   NEW BADGE
+========================= */
+
+.product-badge {
+  position: absolute;
+
+  top: 12px;
+
+  left: 12px;
+
+  padding: 5px 9px;
+
+  background: #172033;
+
+  color: #c9a227;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  border-radius: 2px;
+
+  z-index: 2;
+}
+
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-info {
+  padding: 14px 16px 15px;
+}
+
+.product-category {
+  margin: 0 0 5px;
+
+  color: #c9a227;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.product-info h3 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 15px;
+
+  line-height: 1.3;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   PRICE + VIEW
+========================= */
+
+.product-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 11px;
+}
+
+.product-bottom strong {
+  color: #172033;
+
+  font-size: 16px;
+}
+
+.view-product {
+  color: #172033;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.view-product:hover {
+  color: #c9a227;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .product-image {
+    height: 205px;
+  }
+
+  .product-image img {
+    padding: 8px;
+  }
+
+  .product-info {
+    padding: 13px 14px 14px;
+  }
+
+}

@@ -1,0 +1,771 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  height: 74px;
+
+  background: #172033;
+
+  border-bottom: 2px solid #c9a227;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+
+/* =========================
+   NAVBAR CONTAINER
+========================= */
+
+.navbar-container {
+  width: 100%;
+  max-width: 1450px;
+
+  height: 100%;
+
+  margin: 0 auto;
+
+  padding: 0 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  flex-shrink: 0;
+
+  color: #ffffff;
+
+  font-size: 29px;
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+
+  white-space: nowrap;
+
+  cursor: default;
+
+  user-select: none;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home-link {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   NAV ITEM
+========================= */
+
+.nav-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #c9a227;
+}
+
+
+/* =========================
+   NAV ICON
+========================= */
+
+.nav-icon {
+  color: #c9a227;
+
+  font-size: 18px;
+
+  line-height: 1;
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box {
+  position: relative;
+
+  height: 44px;
+
+  flex: 1;
+
+  max-width: 650px;
+  min-width: 180px;
+
+  display: flex;
+
+  background: #ffffff;
+
+  border: 2px solid #c9a227;
+
+  border-radius: 5px;
+
+  overflow: visible;
+}
+
+
+/* =========================
+   SEARCH INPUT
+========================= */
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 17px;
+
+  border: none;
+  outline: none;
+
+  background: #ffffff;
+
+  color: #172033;
+
+  font-size: 14px;
+
+  border-radius: 4px 0 0 4px;
+}
+
+.search-box input::placeholder {
+  color: #777777;
+}
+
+
+/* =========================
+   SEARCH BUTTON
+========================= */
+
+.search-btn {
+  width: 52px;
+  height: 100%;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  background: #c9a227;
+
+  color: #172033;
+
+  font-size: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  border-radius: 0 3px 3px 0;
+
+  transition: background 0.2s ease;
+}
+
+.search-btn:hover {
+  background: #ffffff;
+}
+
+
+/* =========================
+   SEARCH SUGGESTIONS
+========================= */
+
+.search-suggestions {
+  position: absolute;
+
+  top: calc(100% + 7px);
+
+  left: 0;
+  right: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+  z-index: 5000;
+}
+
+
+/* =========================
+   SUGGESTION
+========================= */
+
+.search-suggestion {
+  width: 100%;
+
+  min-height: 66px;
+
+  padding: 9px 13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  background: #ffffff;
+
+  border: none;
+
+  border-bottom: 1px solid #eeeeee;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition: background 0.15s ease;
+}
+
+.search-suggestion:last-child {
+  border-bottom: none;
+}
+
+.search-suggestion:hover {
+  background: #f7f7f7;
+}
+
+
+/* =========================
+   SUGGESTION IMAGE
+========================= */
+
+.search-suggestion img {
+  width: 46px;
+  height: 46px;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  flex-shrink: 0;
+
+  background: #f2f2f2;
+}
+
+
+/* =========================
+   SUGGESTION INFO
+========================= */
+
+.suggestion-info {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+/* =========================
+   PRODUCT NAME
+========================= */
+
+.suggestion-name {
+  color: #172033;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.suggestion-category {
+  color: #777777;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.suggestion-price {
+  color: #172033;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.cart-nav-item {
+  position: relative;
+
+  padding-right: 4px;
+}
+
+
+/* =========================
+   CART ICON
+========================= */
+
+.cart-icon {
+  color: #c9a227;
+
+  font-size: 19px;
+
+  line-height: 1;
+}
+
+
+/* =========================
+   CART COUNT
+========================= */
+
+.navbar .cart-count {
+  position: absolute;
+
+  top: -10px;
+  right: -11px;
+
+  min-width: 18px;
+  height: 18px;
+
+  padding: 0 5px;
+
+  border-radius: 50%;
+
+  background: #c9a227;
+
+  color: #172033;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+
+  .navbar-container {
+    padding: 0 25px;
+
+    gap: 20px;
+  }
+
+  .logo {
+    font-size: 27px;
+  }
+
+  .nav-links {
+    gap: 17px;
+  }
+
+}
+
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+  .navbar-container {
+    padding: 0 20px;
+
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-item {
+    font-size: 13px;
+
+    gap: 5px;
+  }
+
+  .nav-icon {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    gap: 13px;
+  }
+
+  .search-box {
+    min-width: 150px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: auto;
+
+    min-height: 124px;
+  }
+
+
+  .navbar-container {
+    width: 100%;
+
+    height: auto;
+
+    padding: 12px 16px 14px;
+
+    display: grid;
+
+    grid-template-columns: auto 1fr;
+
+    grid-template-rows: 38px 44px;
+
+    gap: 10px 12px;
+  }
+
+
+  /* LOGO */
+
+  .logo {
+    grid-column: 1;
+
+    grid-row: 1;
+
+    align-self: center;
+
+    font-size: 24px;
+  }
+
+
+  /* HOME */
+
+  .home-link {
+    grid-column: 2;
+
+    grid-row: 1;
+
+    justify-self: start;
+
+    font-size: 12px;
+
+    margin-left: 0;
+  }
+
+
+  /* NAVIGATION */
+
+  .nav-links {
+    grid-column: 2;
+
+    grid-row: 1;
+
+    justify-self: end;
+
+    margin-left: 0;
+
+    gap: 10px;
+  }
+
+
+  /* SEARCH */
+
+  .search-box {
+    grid-column: 1 / -1;
+
+    grid-row: 2;
+
+    width: 100%;
+
+    height: 44px;
+
+    max-width: none;
+
+    min-width: 0;
+  }
+
+  .search-box input {
+    min-width: 0;
+
+    padding: 0 12px;
+
+    font-size: 13px;
+  }
+
+  .search-btn {
+    width: 48px;
+
+    font-size: 16px;
+  }
+
+
+  /* NAV ITEMS */
+
+  .nav-item {
+    font-size: 12px;
+
+    gap: 4px;
+  }
+
+  .nav-icon {
+    font-size: 16px;
+  }
+
+  .cart-icon {
+    font-size: 17px;
+  }
+
+
+  /* CART COUNT */
+
+  .navbar .cart-count {
+    top: -9px;
+
+    right: -10px;
+
+    min-width: 17px;
+
+    height: 17px;
+
+    font-size: 9px;
+  }
+
+
+  /* SEARCH SUGGESTIONS */
+
+  .search-suggestions {
+    top: calc(100% + 5px);
+
+    max-height: 320px;
+
+    overflow-y: auto;
+  }
+
+  .search-suggestion {
+    min-height: 58px;
+
+    padding: 7px 10px;
+
+    gap: 9px;
+  }
+
+  .search-suggestion img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .suggestion-name {
+    font-size: 12px;
+  }
+
+  .suggestion-category {
+    font-size: 10px;
+  }
+
+  .suggestion-price {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    min-height: 120px;
+  }
+
+  .navbar-container {
+    padding: 11px 13px 13px;
+
+    gap: 9px;
+  }
+
+
+  /* LOGO */
+
+  .logo {
+    font-size: 22px;
+  }
+
+
+  /* HOME */
+
+  .home-link {
+    font-size: 11px;
+  }
+
+
+  /* NAVIGATION */
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-item {
+    font-size: 11px;
+
+    gap: 3px;
+  }
+
+  .nav-icon {
+    font-size: 15px;
+  }
+
+  .cart-icon {
+    font-size: 16px;
+  }
+
+
+  /* SEARCH */
+
+  .search-box {
+    height: 42px;
+  }
+
+  .search-box input {
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .search-btn {
+    width: 45px;
+
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+  .navbar-container {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .home-link {
+    font-size: 10px;
+  }
+
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-item {
+    font-size: 10px;
+  }
+
+  .nav-icon {
+    font-size: 14px;
+  }
+
+  .cart-icon {
+    font-size: 15px;
+  }
+
+  .search-box input {
+    font-size: 11px;
+  }
+
+}
