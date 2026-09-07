@@ -37,7 +37,7 @@ function Register() {
 
 
       const response = await fetch(
-        "http://https://buybuzz-backend.onrender.com/api/auth/register",
+        "https://buybuzz-backend.onrender.com/api/auth/register",
         {
           method: "POST",
 
