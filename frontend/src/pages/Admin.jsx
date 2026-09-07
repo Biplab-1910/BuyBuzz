@@ -35,7 +35,7 @@ function Admin() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/products"
+        "https://buybuzz-backend.onrender.com/api/products"
       );
 
       const data = await response.json();
@@ -96,7 +96,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/products/${id}`,
+        `http:///api/products/${id}`,
         {
           method: "DELETE",
         }

@@ -44,14 +44,20 @@ function Products() {
         setLoading(true);
         setError("");
 
-      const response = await fetch(
+
+//       const response = await fetch(
+//   "https://buybuzz-backend.onrender.com/api/products"
+// );
+
+    const response = await fetch(
   "https://buybuzz-backend.onrender.com/api/products"
 );
-        if (!response.ok) {
-          throw new Error(
-            "Failed to fetch products"
-          );
-        }
+
+if (!response.ok) {
+  throw new Error(
+    "Failed to fetch products"
+  );
+}
 
         const data =
           await response.json();

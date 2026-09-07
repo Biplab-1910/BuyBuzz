@@ -29,7 +29,7 @@ function ProductDetails() {
         setLoading(true);
 
         const response = await fetch(
-          `http://localhost:5000/api/products/${id}`
+          `http:///api/products/${id}`
         );
 
         if (!response.ok) {
