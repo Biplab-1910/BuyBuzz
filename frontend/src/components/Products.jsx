@@ -44,10 +44,9 @@ function Products() {
         setLoading(true);
         setError("");
 
-        const response = await fetch(
-          "http://localhost:5000/api/products"
-        );
-
+      const response = await fetch(
+  "https://buybuzz-backend.onrender.com/api/products"
+);
         if (!response.ok) {
           throw new Error(
             "Failed to fetch products"
