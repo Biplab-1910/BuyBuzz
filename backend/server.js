@@ -26,7 +26,11 @@ connectDB();
 // MIDDLEWARE
 
 
-app.use(cors());
+app.use(cors({
+  origin: "https://buybuzz.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use(express.json());
 
