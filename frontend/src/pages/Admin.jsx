@@ -96,7 +96,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        `http:///api/products/${id}`,
+        `https://buybuzz-backend.onrender.com/api/products/${id}`,
         {
           method: "DELETE",
         }
