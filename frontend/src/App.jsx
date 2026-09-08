@@ -11,10 +11,10 @@ import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Orders from "./pages/Orders";
+import AdminOrders from "./pages/AdminOrders";
 import Return from "./pages/Return";
 import Admin from "./pages/Admin";
 import EditProduct from "./pages/EditProduct";
-import AdminOrders from "./pages/Orders";
 
 import "./index.css";
 
@@ -43,9 +43,10 @@ function App() {
           element={<Admin />}
         />
 
+        {/* ADMIN ORDERS */}
         <Route
           path="/admin/orders"
-          element={<Orders />}
+          element={<AdminOrders />}
         />
 
         <Route
@@ -78,6 +79,7 @@ function App() {
           element={<Checkout />}
         />
 
+        {/* CUSTOMER ORDERS */}
         <Route
           path="/orders"
           element={<Orders />}

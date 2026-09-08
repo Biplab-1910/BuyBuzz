@@ -43,7 +43,7 @@ function Orders() {
 
         const response =
           await fetch(
-            "https://buybuzz-backend.onrender.com/api/orders/my-orders",
+            "http://localhost:5000/api/orders/my-orders",
             {
               headers: {
                 Authorization:

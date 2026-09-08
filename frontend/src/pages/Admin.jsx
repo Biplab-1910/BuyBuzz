@@ -48,11 +48,9 @@ function Admin() {
       }
 
       setProducts(data.products || []);
-
     } catch (error) {
       console.error(error);
       setError("Failed to load products");
-
     } finally {
       setLoading(false);
     }
@@ -74,7 +72,6 @@ function Admin() {
     setMessage("");
     setError("");
 
-    // EDIT PRODUCT PAGE
     navigate(`/admin/edit-product/${product._id}`);
   };
 
@@ -122,7 +119,6 @@ function Admin() {
             product._id !== id
         )
       );
-
     } catch (error) {
       console.error(error);
       setError(
@@ -316,6 +312,8 @@ function Admin() {
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: "20px",
+          gap: "10px",
+          flexWrap: "wrap",
         }}
       >
         <h2
@@ -327,23 +325,65 @@ function Admin() {
           Products
         </h2>
 
-        <button
-          type="button"
-          onClick={() =>
-            navigate("/admin/add-product")
-          }
+        {/* BUTTONS */}
+
+        <div
           style={{
-            padding: "11px 18px",
-            background: colors.navy,
-            color: colors.goldLight,
-            border: `1px solid ${colors.gold}`,
-            borderRadius: "7px",
-            cursor: "pointer",
-            fontWeight: "700",
+            display: "flex",
+            gap: "10px",
+            flexWrap: "wrap",
           }}
         >
-          + Add Product
-        </button>
+
+          {/* ORDERS BUTTON */}
+
+          <button
+            type="button"
+            onClick={() =>
+              navigate("/admin/orders")
+            }
+            style={{
+              padding: "11px 18px",
+              background: colors.gold,
+              color: colors.navy,
+              border: "none",
+              borderRadius: "7px",
+              cursor: "pointer",
+              fontWeight: "700",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background =
+                colors.goldLight;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background =
+                colors.gold;
+            }}
+          >
+            Orders
+          </button>
+
+          {/* ADD PRODUCT BUTTON */}
+
+          <button
+            type="button"
+            onClick={() =>
+              navigate("/admin/add-product")
+            }
+            style={{
+              padding: "11px 18px",
+              background: colors.navy,
+              color: colors.goldLight,
+              border: `1px solid ${colors.gold}`,
+              borderRadius: "7px",
+              cursor: "pointer",
+              fontWeight: "700",
+            }}
+          >
+            + Add Product
+          </button>
+
+        </div>
       </div>
 
       {/* =========================
