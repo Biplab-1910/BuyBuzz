@@ -12,6 +12,8 @@ const authRoutes =
 
 const orderRoutes =
   require("./routes/orderRoutes");
+const uploadRoutes =
+  require("./routes/uploadRoutes");
 
 
 dotenv.config();
@@ -65,6 +67,11 @@ app.use(
 app.use(
   "/api/orders",
   orderRoutes
+);
+
+app.use(
+  "/api/upload",
+  uploadRoutes
 );
 
 // SERVER
