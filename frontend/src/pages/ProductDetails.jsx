@@ -29,7 +29,7 @@ function ProductDetails() {
         setLoading(true);
 
         const response = await fetch(
-          `http:///api/products/${id}`
+          `https://buybuzz-backend.onrender.com/api/products/${id}`
         );
 
         if (!response.ok) {
@@ -78,9 +78,9 @@ function ProductDetails() {
     );
   }
 
-  /* =========================
+  /* 
      INCREASE QUANTITY
-  ========================= */
+ */
 
   const increaseQuantity = () => {
     if (quantity < product.stock) {
@@ -88,17 +88,16 @@ function ProductDetails() {
     }
   };
 
-  /* =========================
+  /*
      DECREASE QUANTITY
-  ========================= */
+   */
 
   const decreaseQuantity = () => {
     setQuantity((prev) => Math.max(1, prev - 1));
   };
 
-  /* =========================
-     ADD TO CART
-  ========================= */
+  /* 
+     ADD TO CART */
 
   const addToCart = () => {
     const oldCart = JSON.parse(
