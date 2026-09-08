@@ -29,7 +29,8 @@ function EditProduct() {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `http:///api/products/${id}`
+          // `http:///api/products/${id}`
+          `https://buybuzz-backend.onrender.com/api/products/${id}`
         );
 
         const data = await response.json();
@@ -104,16 +105,16 @@ function EditProduct() {
     }));
   };
 
-  // =========================
+  
   // UPDATE PRODUCT
-  // =========================
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // =========================
+
     // VALIDATION
-    // =========================
+  
 
     if (!formData.name.trim()) {
       alert("Please enter product name");
@@ -147,7 +148,7 @@ function EditProduct() {
 
     try {
       const response = await fetch(
-        `http:///api/products/${id}`,
+        `https://buybuzz-backend.onrender.com/api/products/${id}`,
         {
           method: "PUT",
 
@@ -204,10 +205,8 @@ function EditProduct() {
 
         return;
       }
-
-      // =========================
       // SUCCESS
-      // =========================
+     
 
       setSuccess(true);
 
@@ -230,9 +229,8 @@ function EditProduct() {
     }
   };
 
-  // =========================
   // LOADING
-  // =========================
+
 
   if (loading) {
     return (
@@ -262,16 +260,13 @@ function EditProduct() {
     );
   }
 
-  // =========================
+
   // EDIT PAGE
-  // =========================
+ 
 
   return (
     <main className="add-product-page">
 
-      {/* =========================
-          SUCCESS POPUP
-      ========================= */}
 
       {success && (
 
@@ -405,9 +400,8 @@ function EditProduct() {
 
             </div>
 
-            {/* =========================
-                CATEGORY + SUB CATEGORY
-            ========================= */}
+            {/*
+                CATEGORY + SUB CATEGORY*/}
 
             <div className="form-row">
 
@@ -470,9 +464,9 @@ function EditProduct() {
 
             </div>
 
-            {/* =========================
+            {/* 
                 IMAGE URL
-            ========================= */}
+             */}
 
             <div className="form-group">
 
@@ -491,9 +485,9 @@ function EditProduct() {
 
             </div>
 
-            {/* =========================
+            {/*
                 DESCRIPTION
-            ========================= */}
+            */}
 
             <div className="form-group">
 
@@ -513,9 +507,9 @@ function EditProduct() {
 
             </div>
 
-            {/* =========================
+            {/*
                 TRENDING
-            ========================= */}
+            */}
 
             <label className="trending-box">
 
@@ -544,9 +538,8 @@ function EditProduct() {
 
             </label>
 
-            {/* =========================
-                BUTTON
-            ========================= */}
+                {/* BUTTON */}
+           
 
             <button
               type="submit"
