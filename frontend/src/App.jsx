@@ -14,9 +14,9 @@ import Orders from "./pages/Orders";
 import Return from "./pages/Return";
 import Admin from "./pages/Admin";
 import EditProduct from "./pages/EditProduct";
+import AdminOrders from "./pages/Orders";
 
 import "./index.css";
-
 
 function App() {
   return (
@@ -24,7 +24,6 @@ function App() {
 
       {/* NAVBAR */}
       <Navbar />
-
 
       {/* PAGES */}
       <Routes>
@@ -38,19 +37,26 @@ function App() {
           path="/login"
           element={<Login />}
         />
+
         <Route
-  path="/admin"
-  element={<Admin />}
-/>
+          path="/admin"
+          element={<Admin />}
+        />
+
+        <Route
+          path="/admin/orders"
+          element={<Orders />}
+        />
 
         <Route
           path="/register"
           element={<Register />}
         />
+
         <Route
-  path="/admin/add-product"
-  element={<AddProduct />}
-/>
+          path="/admin/add-product"
+          element={<AddProduct />}
+        />
 
         <Route
           path="/products"
@@ -81,14 +87,13 @@ function App() {
           path="/return"
           element={<Return />}
         />
-<Route
-  path="/admin/edit-product/:id"
-  element={<EditProduct />}
-/>
+
+        <Route
+          path="/admin/edit-product/:id"
+          element={<EditProduct />}
+        />
 
       </Routes>
-      
-
 
       {/* FOOTER */}
       <Footer />
