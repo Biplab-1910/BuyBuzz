@@ -5,13 +5,14 @@ function AddProduct() {
   const [formData, setFormData] = useState({
     name: "",
     price: "",
-    image: "",
     description: "",
     stock: "",
     category: "",
     subCategory: "",
     isTrending: false,
   });
+
+  const [imageFile, setImageFile] = useState(null);
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -37,14 +38,12 @@ function AddProduct() {
     }));
   };
 
-
   // =========================
   // ADD PRODUCT
   // =========================
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
 
     // =========================
     // BASIC VALIDATION
@@ -70,16 +69,52 @@ function AddProduct() {
       return;
     }
 
-    if (!formData.image.trim()) {
-      alert("Please enter image URL");
+    if (!imageFile) {
+      alert("Please select an image");
       return;
     }
 
-
     setLoading(true);
 
-
     try {
+      // =========================
+      // UPLOAD IMAGE TO CLOUDINARY
+      // =========================
+
+      const imageData = new FormData();
+
+      imageData.append("image", imageFile);
+
+      const uploadResponse = await fetch(
+        "https://buybuzz-backend.onrender.com/api/upload",
+        {
+          method: "POST",
+          body: imageData,
+        }
+      );
+
+      const uploadData =
+        await uploadResponse.json();
+
+      // =========================
+      // IMAGE UPLOAD ERROR
+      // =========================
+
+      if (!uploadResponse.ok) {
+        alert(
+          uploadData.message ||
+            "Image upload failed"
+        );
+
+        return;
+      }
+
+      const imageUrl =
+        uploadData.imageUrl;
+
+      // =========================
+      // ADD PRODUCT
+      // =========================
 
       const response = await fetch(
         "https://buybuzz-backend.onrender.com/api/products",
@@ -97,8 +132,7 @@ function AddProduct() {
               formData.price
             ),
 
-            image:
-              formData.image.trim(),
+            image: imageUrl,
 
             description:
               formData.description.trim(),
@@ -119,17 +153,14 @@ function AddProduct() {
         }
       );
 
-
       const data =
         await response.json();
-
 
       // =========================
       // BACKEND ERROR
       // =========================
 
       if (!response.ok) {
-
         alert(
           data.message ||
             "Product could not be added"
@@ -138,13 +169,11 @@ function AddProduct() {
         return;
       }
 
-
       // =========================
       // SUCCESS
       // =========================
 
       setSuccess(true);
-
 
       // =========================
       // HIDE SUCCESS POPUP
@@ -154,7 +183,6 @@ function AddProduct() {
         setSuccess(false);
       }, 3000);
 
-
       // =========================
       // CLEAR FORM
       // =========================
@@ -162,7 +190,6 @@ function AddProduct() {
       setFormData({
         name: "",
         price: "",
-        image: "",
         description: "",
         stock: "",
         category: "",
@@ -170,8 +197,12 @@ function AddProduct() {
         isTrending: false,
       });
 
-    } catch (error) {
+      setImageFile(null);
 
+      // Reset file input
+      e.target.reset();
+
+    } catch (error) {
       console.error(
         "Backend connection error:",
         error
@@ -180,31 +211,24 @@ function AddProduct() {
       alert(
         "Backend connection failed! Make sure your backend server is running."
       );
-
     } finally {
-
       setLoading(false);
-
     }
   };
 
-
   return (
     <main className="add-product-page">
-
 
       {/* =========================
           SUCCESS POPUP
       ========================= */}
 
       {success && (
-
         <div className="success-popup">
 
           <div className="success-icon">
             ✓
           </div>
-
 
           <div className="success-content">
 
@@ -218,7 +242,6 @@ function AddProduct() {
 
           </div>
 
-
           <button
             type="button"
             className="success-close"
@@ -231,12 +254,9 @@ function AddProduct() {
           </button>
 
         </div>
-
       )}
 
-
       <div className="add-product-container">
-
 
         {/* =========================
             HEADER
@@ -258,7 +278,6 @@ function AddProduct() {
 
         </div>
 
-
         {/* =========================
             FORM CARD
         ========================= */}
@@ -268,7 +287,6 @@ function AddProduct() {
           <form
             onSubmit={handleSubmit}
           >
-
 
             {/* PRODUCT NAME */}
 
@@ -399,20 +417,22 @@ function AddProduct() {
             </div>
 
 
-            {/* IMAGE URL */}
+            {/* PRODUCT IMAGE */}
 
             <div className="form-group">
 
               <label>
-                Image URL
+                Product Image
               </label>
 
               <input
-                type="text"
-                name="image"
-                value={formData.image}
-                onChange={handleChange}
-                placeholder="https://example.com/product.jpg"
+                type="file"
+                accept="image/*"
+                onChange={(e) =>
+                  setImageFile(
+                    e.target.files[0]
+                  )
+                }
                 required
               />
 
@@ -454,7 +474,6 @@ function AddProduct() {
               />
 
               <span className="custom-check"></span>
-
 
               <div>
 

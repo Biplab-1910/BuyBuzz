@@ -6,22 +6,21 @@ function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  /* =========================
-     PRODUCT STATE
-  ========================= */
+  /*  PRODUCT STATE
+   */
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  /* =========================
+  /* 
      QUANTITY
-  ========================= */
+  */
 
   const [quantity, setQuantity] = useState(1);
 
-  /* =========================
+  /* 
      GET PRODUCT
-  ========================= */
+ */
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -170,20 +169,20 @@ function ProductDetails() {
       "buybuzz-token"
     );
 
-    /* =========================
+    /* 
        USER ALREADY LOGGED IN
        → GO DIRECTLY TO CHECKOUT
-    ========================= */
+   */
 
     if (token) {
       navigate("/checkout");
       return;
     }
 
-    /* =========================
+    /* 
        USER NOT LOGGED IN
        → GO TO LOGIN
-    ========================= */
+   */
 
     localStorage.setItem(
       "buybuzz-buy-now-pending",
